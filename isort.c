@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE 50
+
 int shift_element(int *arr, int i)
 {
 
@@ -30,7 +32,7 @@ int insertion_sort(int *arr, int len)
 
 int main()
 {
-    int *list;
+    /*int *list;
     list = (int *)malloc(50 * sizeof(int));
     if (list==NULL){
         perror("failed");
@@ -58,7 +60,27 @@ int main()
     {
         printf("%d ", *(list + i));
     }
-    free(list);
+    free(list);*/
+    int arr[SIZE];
+    int num;
+
+    for (int i = 0; i < 50; i++)
+    {
+        scanf("%d", &num);
+        arr[i] = num;
+    }
+    insertion_sort(arr, 50);
+    for (int i = 0; i < 50; i++)
+    {
+        if (i == 0)
+        {
+            printf("%d", arr[i]);
+        }
+        else
+        {
+            printf(",%d", arr[i]);
+        }
+    }
 
     return 0;
 }
