@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     fgets(line, sizeof(line) , stdin);
     while (fgets(line, sizeof(line) , stdin))
     {
-        printFunc(line, target_word, !strcmp("a", func_type));
+        printFunc(line, target_word, strcmp("a", func_type));
     }
 
     fclose(stdin);
