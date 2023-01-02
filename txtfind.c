@@ -75,35 +75,29 @@ int printFunc(char *line, char *word, int printWord)
     return 0;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 
-    fp = fopen(FILENAME, "r");
-    if (fp == NULL)
-    {
-        printf("fopen() failed\n");
-        exit(1);
-    }
-
     // save target word and type of function
-    fgets(line, LINE, fp);
-
+    fgets(line, sizeof(line) , stdin);
     strcpy(copy_line, line);
     token = strtok(copy_line, " ");
     target_word = token;
+
     // printf("%s.\n", target_word);
     token = strtok(NULL, " ");
     func_type = token;
     func_type[1] = '\0';
+
     // printf("%s.\n", func_type);
 
-    fgets(line, LINE, fp);
-    while (fgets(line, LINE, fp))
+    fgets(line, sizeof(line) , stdin);
+    while (fgets(line, sizeof(line) , stdin))
     {
         printFunc(line, target_word, !strcmp("a", func_type));
     }
 
-    fclose(fp);
+    fclose(stdin);
 
     return 0;
 }
