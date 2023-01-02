@@ -32,35 +32,7 @@ int insertion_sort(int *arr, int len)
 
 int main()
 {
-    /*int *list;
-    list = (int *)malloc(50 * sizeof(int));
-    if (list==NULL){
-        perror("failed");
-    }
-    for (int i = 0; i < 48; i++)
-    {
-        *(list + i) = rand() % 50;
-    }
-    *(list + 48) = 0;
-    *(list + 49) = 1;
-    for (int i = 0; i < 50; i++)
-    {
-        if (i == 0)
-        {
-            printf("%d", *(list + i));
-        }
-        else
-        {
-            printf(",%d", *(list + i));
-        }
-    }
-    puts("");
-    insertion_sort(list, 50);
-    for (int i = 0; i < 50; i++)
-    {
-        printf("%d ", *(list + i));
-    }
-    free(list);*/
+  
     int arr[SIZE];
     int num;
 
@@ -81,6 +53,6 @@ int main()
             printf(",%d", arr[i]);
         }
     }
-
+    printf("\n");
     return 0;
 }
